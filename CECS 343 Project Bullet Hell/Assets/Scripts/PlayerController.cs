@@ -10,7 +10,11 @@ public class PlayerController : MonoBehaviour {
 	float xMax = 5;
 
 	void Start(){
-		//Camera.main.ViewportToWorldPoint(new Vector3(
+		float distance = transform.position.z - Camera.main.transform.position.z;
+		Vector3 leftmost = Camera.main.ViewportToWorldPoint (new Vector3 (0,0,distance));
+		Vector3 rightmost = Camera.main.ViewportToWorldPoint (new Vector3 (1, 0, distance));
+		xMin = leftmost.x;
+		xMax = rightmost.x;
 	}
 
 	// Update is called once per frame
