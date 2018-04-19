@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ScrollingObject : MonoBehaviour {
 	private Rigidbody2D rigidBody;
-	private float m_speed = -0.5f;
+	private float m_speed = -2f; 
 	[SerializeField] private bool m_stopScroling;
 
 	// Use this for initialization
