@@ -9,7 +9,7 @@ public class EnemySpawner : MonoBehaviour {
 	void Start () {
         foreach (Transform child in transform) {
             GameObject enemy = Instantiate(enemyPrefab, child.transform.position, Quaternion.identity) as GameObject;
-            enemy.transform.parent = transform;
+            enemy.transform.parent = child;
         }
 	}
 	
