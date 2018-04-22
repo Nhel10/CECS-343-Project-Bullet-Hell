@@ -20,12 +20,15 @@ public class EnemySpawner : MonoBehaviour {
 
         xmax = rightBoundary.x;
         xmin = leftBoundary.x;
+	}
 
-        foreach (Transform child in transform) {
+    void SpawnEnemies() {
+        foreach (Transform child in transform)
+        {
             GameObject enemy = Instantiate(enemyPrefab, child.transform.position, Quaternion.identity) as GameObject;
             enemy.transform.parent = child;
         }
-	}
+    }
 
     public void OnDrawGizmos() {
         Gizmos.color = Color.yellow;
@@ -48,5 +51,19 @@ public class EnemySpawner : MonoBehaviour {
         } else if (leftEdgeOfFormation < xmin) {
             movingRight = true;
         }
+
+        if (AllMembersDead()) {
+            Debug.Log("Empty Formation");
+            SpawnEnemies();
+        }
 	}
+
+    bool AllMembersDead() {
+        foreach (Transform childPositionGameObject in transform) {
+            if (childPositionGameObject.childCount > 0) {
+                return false;
+            }
+        }
+        return true;
+    }
 }
