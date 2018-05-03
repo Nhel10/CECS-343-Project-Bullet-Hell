@@ -9,7 +9,8 @@ public class PlayerController : MonoBehaviour {
 	public float projectileSpeed;
 	public float fireRate;
 
-	public GameObject projectile;
+	public GameObject laser;
+
 
 	float xMin;
 	float xMax;
@@ -31,20 +32,19 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	void Fire(){
-		GameObject beam = Instantiate (projectile, transform.position, Quaternion.identity) as GameObject;
-		beam.GetComponent<Rigidbody2D> ().velocity = new Vector3 (0, projectileSpeed, 0);
+		GameObject beam = Instantiate (laser, transform.position, Quaternion.identity) as GameObject;
+		beam.GetComponent<Rigidbody2D>().velocity = new Vector2 (0, projectileSpeed);
+
+		Vector2 newPosition = new Vector2 (transform.position.x + .5f , transform.position.y);
+		GameObject beam2 = Instantiate (laser, newPosition, Quaternion.identity) as GameObject;
+		beam2.GetComponent<Rigidbody2D>().velocity = new Vector2 (0, projectileSpeed);
+
+		Vector2 newPosition2 = new Vector2 (transform.position.x - .5f , transform.position.y);
+		GameObject beam3 = Instantiate (laser, newPosition2, Quaternion.identity) as GameObject;
+		beam3.GetComponent<Rigidbody2D>().velocity = new Vector2 (0, projectileSpeed);
 	}
 
-	// Update is called once per frame
-	void Update () {
-		if (Input.GetKeyDown (KeyCode.Space)) {
-			InvokeRepeating ("Fire", 0.0000001f, fireRate);
-		}
-		if(Input.GetKeyUp(KeyCode.Space)){
-			CancelInvoke ("Fire");
-		}
-
-
+	void moveShip(){
 		if (Input.GetKey (KeyCode.LeftArrow)) {
 			//transform.position += new Vector3 (-speed * Time.deltaTime, 0, 0);
 			transform.position += Vector3.left * speed * Time.deltaTime;
@@ -68,7 +68,18 @@ public class PlayerController : MonoBehaviour {
 		} else if (Input.GetKey (KeyCode.UpArrow) && Input.GetKey (KeyCode.RightArrow)) {
 			transform.position += new Vector3 (speed* .5f * Time.deltaTime, speed* .5f * Time.deltaTime, 0);
 		}
+	}
 
+	// Update is called once per frame
+	void Update () {
+		if (Input.GetKeyDown (KeyCode.Space)) {
+			InvokeRepeating ("Fire", 0.0000001f, fireRate);
+		}
+		if(Input.GetKeyUp(KeyCode.Space)){
+			CancelInvoke ("Fire");
+		}
+
+		moveShip ();
 
 		float newX = Mathf.Clamp (transform.position.x, xMin, xMax);
 		float newY = Mathf.Clamp (transform.position.y, yMin, yMax);
