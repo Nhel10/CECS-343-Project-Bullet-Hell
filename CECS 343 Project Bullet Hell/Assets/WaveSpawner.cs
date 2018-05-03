@@ -50,10 +50,10 @@ public class WaveSpawner : MonoBehaviour {
             {
                 StartCoroutine(SpawnWave(enemyWaves[nextWave]));    //spawn next wave
             }
-            else
-            {
-                waveCountdown -= Time.deltaTime;
-            }
+        }
+        else
+        {
+            waveCountdown -= Time.deltaTime;
         }
     }
 
@@ -62,11 +62,12 @@ public class WaveSpawner : MonoBehaviour {
         searchCountdown -= Time.deltaTime;
         if (searchCountdown <= 0f)
         {
+            searchCountdown = 1f;   //reset countdown
+
             if (GameObject.FindGameObjectWithTag("Enemy") == null)
             {
                 return false;   //no enemies are alive
             }
-            searchCountdown = 1f;   //reset countdown
         }
         return true;    //enemies are alive
     }
