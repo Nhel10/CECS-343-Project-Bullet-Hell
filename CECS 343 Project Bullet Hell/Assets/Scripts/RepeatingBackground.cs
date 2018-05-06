@@ -21,7 +21,7 @@ public class RepeatingBackground : MonoBehaviour {
 	}
 
 	void RepeateBackground(){
-		Vector2 BGoffset = new Vector2(0,m_BackgroundSize * 2f);
-		transform.position = (Vector2)transform.position + BGoffset;
+		Vector3 BGoffset = new Vector3(0,m_BackgroundSize * 2f, 3);
+		transform.position = (Vector3)transform.position + BGoffset;
 	}
 }

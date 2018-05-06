@@ -458,23 +458,23 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 
-    m_LastClickedID: 0
-    m_ExpandedIDs: e0e7ffff000000003c34000060340000
+    m_SelectedIDs: 462d0000
+    m_LastClickedID: 11590
+    m_ExpandedIDs: 9efbffff000000007a2d0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: WaveSpawner
-      m_OriginalName: WaveSpawner
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 13372
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 0
       m_ClientGUIView: {fileID: 2}
     m_SearchString: 
@@ -511,14 +511,14 @@ MonoBehaviour:
     height: 475
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SceneLighting: 1
-  lastFramingTime: 49529.17943093745
+  lastFramingTime: 130.2023189985019
   m_2DMode: 1
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 0.3373029, y: 3.320578, z: -9.1171875}
+    m_Target: {x: 0, y: 10.26, z: 3}
     speed: 2
-    m_Value: {x: 0.3373029, y: 3.320578, z: -9.1171875}
+    m_Value: {x: 0, y: 10.26, z: 3}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -546,9 +546,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 22
+    m_Target: 23.896832
     speed: 2
-    m_Value: 22
+    m_Value: 23.896832
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -637,23 +637,23 @@ MonoBehaviour:
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 11}
-    m_SelectedIDs: da300000
-    m_LastClickedID: 12506
-    m_ExpandedIDs: 00000000b02e0000082f0000223200009034000000ca9a3bffffff7f
+    m_SelectedIDs: c8290000
+    m_LastClickedID: 10696
+    m_ExpandedIDs: 000000008a270000e82700001a2b0000e42d000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: _Scenes
-      m_OriginalName: _Scenes
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 12666
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 11}
     m_SearchString: 
@@ -667,7 +667,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000b02e0000082f00002232000090340000
+    m_ExpandedIDs: 000000008a270000e82700001a2b0000e42d0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
