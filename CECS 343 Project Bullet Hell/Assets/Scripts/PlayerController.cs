@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour {
 	public float padding = 0.5f;
 	public float projectileSpeed;
 	public float fireRate;
-    public float health = 1000f;
+    public float health = 5000f;
 
 	public GameObject laser;
 

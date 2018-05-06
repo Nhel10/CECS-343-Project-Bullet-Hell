@@ -18,11 +18,6 @@ public class GreenEnemyBehavior : MonoBehaviour
 
     private void fire()
     {
-        /*
-        GameObject enemyMissile = Instantiate(projectile, transform.position, Quaternion.identity) as GameObject;
-        enemyMissile.GetComponent<Rigidbody2D>().velocity = new Vector2(0, -enemyMissileSpeed);
-        */
-
         GameObject enemyMissile1 = Instantiate(projectile, transform.position, Quaternion.identity) as GameObject;
         enemyMissile1.GetComponent<Rigidbody2D>().velocity = new Vector2(-0.5f, -enemyMissileSpeed);
 
