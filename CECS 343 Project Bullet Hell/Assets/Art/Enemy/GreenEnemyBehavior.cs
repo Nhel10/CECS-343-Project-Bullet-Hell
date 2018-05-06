@@ -5,14 +5,15 @@ using UnityEngine;
 public class GreenEnemyBehavior : MonoBehaviour
 {
 
-    public GameObject projectile;
-    public float enemyMissileSpeed = 10f;
-    public float health = 1000f;    // health of enemy object
+    public GameObject projectile;           // projectile that the enemy will fire
+    public float enemyMissileSpeed = 10f;   // speed that enemy projectiles travel at
+    public float health = 1000f;            // health of enemy object
+
 
 
     private void Start()
     {
-        InvokeRepeating("fire", 0.0f, 1.5f);
+        InvokeRepeating("fire", 0.0f, 1.5f);    // repeatedly call the fire function
     }
 
 
