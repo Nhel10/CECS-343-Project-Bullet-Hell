@@ -7,10 +7,14 @@ public class PlayerController : MonoBehaviour {
 	public float speed = 5.0f;
 	public float padding = 0.5f;
 	public float projectileSpeed;
+	public float beamProjectileSpeed;
 	public float fireRate;
     public float health = 5000f;
 
 	public GameObject laser;
+	public GameObject missile;
+	public GameObject bomb;
+	public GameObject laserBeam;
 
 
 	float xMin;
@@ -49,13 +53,13 @@ public class PlayerController : MonoBehaviour {
 
 		// Right Missile Launcher 
 		Vector2 rightMissile = new Vector2 (transform.position.x + 0.5f, transform.position.y + 0.2f);
-		GameObject beam5 = Instantiate (laser, rightMissile, Quaternion.identity) as GameObject;
-		beam5.GetComponent<Rigidbody2D>().velocity = new Vector2 (0, projectileSpeed);
+		GameObject beam5 = Instantiate (laserBeam, rightMissile, Quaternion.identity) as GameObject;
+		beam5.GetComponent<Rigidbody2D>().velocity = new Vector2 (0, beamProjectileSpeed);
 
 		// Left Missile Launcher 
 		Vector2 leftMissile = new Vector2 (transform.position.x - 0.5f, transform.position.y + 0.2f);
-		GameObject beam6 = Instantiate (laser, leftMissile, Quaternion.identity) as GameObject;
-		beam6.GetComponent<Rigidbody2D>().velocity = new Vector2 (0, projectileSpeed);
+		GameObject beam6 = Instantiate (laserBeam, leftMissile, Quaternion.identity) as GameObject;
+		beam6.GetComponent<Rigidbody2D>().velocity = new Vector2 (0, beamProjectileSpeed);
 
 
 
