@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour {
 	public float padding = 0.5f;
 	public float projectileSpeed;
 	public float fireRate;
+    public float health = 5000f;
 
 	public GameObject laser;
 
@@ -87,4 +88,19 @@ public class PlayerController : MonoBehaviour {
 		transform.position = new Vector3 (transform.position.x, newY, transform.position.z);
 
 	}
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Projectile laser = collision.gameObject.GetComponent<Projectile>();
+        if (laser)
+        {
+            health -= laser.getDamage();
+            laser.Hit();    // register that a collision was made
+            if (health <= 0)    // if health is reduced to zero
+            {
+                Destroy(gameObject);    //destroy the enemy  
+            }
+            Debug.Log("Hit by laser");
+        }
+    }
 }

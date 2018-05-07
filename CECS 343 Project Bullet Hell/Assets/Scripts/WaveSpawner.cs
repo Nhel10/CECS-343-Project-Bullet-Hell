@@ -15,8 +15,6 @@ public class WaveSpawner : MonoBehaviour {
         public float rate;      //rate to spawn enemies into wave
     }
 
-    public Transform spawnPoint;    //spawn point for ships
-
     public Wave[] enemyWaves;   //array that holds all waves
     private int nextWave = 0;   //tracker for next wave
 
@@ -68,7 +66,7 @@ public class WaveSpawner : MonoBehaviour {
 
         if(nextWave + 1 > enemyWaves.Length - 1)    //if there are no more waves
         {
-            Debug.Log("Level Completer");
+            Debug.Log("Level Completed");
         }
         else
         {
@@ -111,6 +109,6 @@ public class WaveSpawner : MonoBehaviour {
     void SpawnEnemy(Transform thisEnemy)
     {
         Debug.Log("Spawning Enemy");
-        Instantiate(thisEnemy, spawnPoint.position, transform.rotation);    //instantiate enemy
+        Instantiate(thisEnemy, transform.position, transform.rotation);    //instantiate enemy
     }
 }
