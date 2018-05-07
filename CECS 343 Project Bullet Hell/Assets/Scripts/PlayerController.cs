@@ -33,16 +33,32 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	void Fire(){
+		// Center Laser 
 		GameObject beam = Instantiate (laser, transform.position, Quaternion.identity) as GameObject;
 		beam.GetComponent<Rigidbody2D>().velocity = new Vector2 (0, projectileSpeed);
 
-		Vector2 newPosition = new Vector2 (transform.position.x + .5f , transform.position.y);
-		GameObject beam2 = Instantiate (laser, newPosition, Quaternion.identity) as GameObject;
-		beam2.GetComponent<Rigidbody2D>().velocity = new Vector2 (0, projectileSpeed);
+		// Right Laser cannon
+		Vector2 rightLaserCannon = new Vector2 (transform.position.x + .5f , transform.position.y);
+		GameObject beam2 = Instantiate (laser, rightLaserCannon, Quaternion.identity) as GameObject;
+		beam2.GetComponent<Rigidbody2D>().velocity = new Vector2 (-1, projectileSpeed);
 
-		Vector2 newPosition2 = new Vector2 (transform.position.x - .5f , transform.position.y);
-		GameObject beam3 = Instantiate (laser, newPosition2, Quaternion.identity) as GameObject;
-		beam3.GetComponent<Rigidbody2D>().velocity = new Vector2 (0, projectileSpeed);
+		// Left Laser cannon 
+		Vector2 leftLaserCannon = new Vector2 (transform.position.x - .5f , transform.position.y);
+		GameObject beam3 = Instantiate (laser, leftLaserCannon, Quaternion.identity) as GameObject;
+		beam3.GetComponent<Rigidbody2D>().velocity = new Vector2 (1, projectileSpeed);
+
+		// Right Missile Launcher 
+		Vector2 rightMissile = new Vector2 (transform.position.x + 0.5f, transform.position.y + 0.2f);
+		GameObject beam5 = Instantiate (laser, rightMissile, Quaternion.identity) as GameObject;
+		beam5.GetComponent<Rigidbody2D>().velocity = new Vector2 (0, projectileSpeed);
+
+		// Left Missile Launcher 
+		Vector2 leftMissile = new Vector2 (transform.position.x - 0.5f, transform.position.y + 0.2f);
+		GameObject beam6 = Instantiate (laser, leftMissile, Quaternion.identity) as GameObject;
+		beam6.GetComponent<Rigidbody2D>().velocity = new Vector2 (0, projectileSpeed);
+
+
+
 	}
 
 	void moveShip(){
