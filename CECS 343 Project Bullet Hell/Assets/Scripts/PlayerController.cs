@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour {
 
@@ -9,6 +10,7 @@ public class PlayerController : MonoBehaviour {
 	public float projectileSpeed;
 	public float fireRate;
     public float health = 5000f;
+    public Slider healthSlider;     // UI to show player health
 
 	public GameObject laser;
 
@@ -92,9 +94,10 @@ public class PlayerController : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Projectile laser = collision.gameObject.GetComponent<Projectile>();
-        if (laser)
+        if (laser)  // if what the player collides with is a projectilee
         {
-            health -= laser.getDamage();
+            health -= laser.getDamage();    // player loses health equal to projectile damage
+            healthSlider.value = health;    // update UI healthbar
             laser.Hit();    // register that a collision was made
             if (health <= 0)    // if health is reduced to zero
             {
