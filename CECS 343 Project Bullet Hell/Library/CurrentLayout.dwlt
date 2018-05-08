@@ -40,8 +40,8 @@ MonoBehaviour:
     y: 0
     width: 321
     height: 496
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}
@@ -156,10 +156,10 @@ MonoBehaviour:
     y: 30
     width: 1600
     height: 807
-  m_MinSize: {x: 681, y: 492}
+  m_MinSize: {x: 683, y: 492}
   m_MaxSize: {x: 14004, y: 14042}
   vertical: 0
-  controlID: 113
+  controlID: 72
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -180,10 +180,10 @@ MonoBehaviour:
     y: 0
     width: 1144
     height: 807
-  m_MinSize: {x: 404, y: 492}
+  m_MinSize: {x: 406, y: 492}
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
-  controlID: 72
+  controlID: 73
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -204,10 +204,10 @@ MonoBehaviour:
     y: 0
     width: 1144
     height: 496
-  m_MinSize: {x: 404, y: 221}
-  m_MaxSize: {x: 8004, y: 4021}
+  m_MinSize: {x: 406, y: 221}
+  m_MaxSize: {x: 8006, y: 4021}
   vertical: 0
-  controlID: 12
+  controlID: 50
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -295,6 +295,8 @@ MonoBehaviour:
     - {fileID: 1107333031477987470, guid: 4cc4690f727063542b9933e4238ea2fb, type: 2}
     - {fileID: 1107126365510857296, guid: 1a0e217ecd0bd6b478bc610d86ecd0d8, type: 2}
     - {fileID: 1107114617575878068, guid: 369124744815c9a49b5b5d6829578539, type: 2}
+    - {fileID: 1107639616036736490, guid: 47e1c6fdb92d17b459fcc32bc311f875, type: 2}
+    - {fileID: 1107258448012907398, guid: 45eba45d669841042a8f5bb1abb31d8d, type: 2}
     m_ValueSerializationHelper:
     - e00: 1
       e01: 0
@@ -336,6 +338,38 @@ MonoBehaviour:
       e11: 0.91267306
       e12: 0
       e13: 28.381256
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
       e20: 0
       e21: 0
       e22: 1
@@ -494,21 +528,21 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: c2cafdff6421feff64e2feff9efbffff00000000
+    m_ExpandedIDs: e8f5ffff9efbffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: GameObject
-      m_OriginalName: GameObject
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: -122524
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 0
       m_ClientGUIView: {fileID: 2}
     m_SearchString: 
@@ -545,14 +579,14 @@ MonoBehaviour:
     height: 475
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SceneLighting: 1
-  lastFramingTime: 81058.41473277804
+  lastFramingTime: 1976.5337977374518
   m_2DMode: 1
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 233.62943, y: 218.1772, z: -4.6573195}
+    m_Target: {x: -0.25, y: 5.65, z: 0}
     speed: 2
-    m_Value: {x: 233.62943, y: 218.1772, z: -4.6573195}
+    m_Value: {x: -0.25, y: 5.65, z: 0}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -580,9 +614,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 700.0033
+    m_Target: 22
     speed: 2
-    m_Value: 700.0033
+    m_Value: 22
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -660,20 +694,20 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Scripts
+    - Assets/Art/Enemy
   m_ViewMode: 1
   m_StartGridSize: 53
   m_LastFolders:
-  - Assets/Scripts
+  - Assets/Art/Enemy
   m_LastFoldersGridSize: 53
   m_LastProjectPath: C:\Users\Nicholas\Documents\GitHub\CECS-343-Project-Bullet-Hell\CECS
     343 Project Bullet Hell
   m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 111}
-    m_SelectedIDs: e22b0000
-    m_LastClickedID: 11234
-    m_ExpandedIDs: 000000008e270000ec270000282b0000582e000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 79}
+    m_SelectedIDs: d8290000
+    m_LastClickedID: 10712
+    m_ExpandedIDs: 0000000090270000ee2700002a2b0000922e000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -701,7 +735,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000008e270000ec270000282b0000582e0000
+    m_ExpandedIDs: 0000000090270000ee2700002a2b0000922e0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -729,7 +763,7 @@ MonoBehaviour:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: fa260000f2260000c42600000000000016270000862b0000882b0000
+    m_ExpandedInstanceIDs: fa260000f2260000c42600000000000016270000862b0000882b0000362800008492fdff
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
