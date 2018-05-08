@@ -6,27 +6,12 @@ public class PlayerController : MonoBehaviour {
 
 	public float speed = 5.0f;
 	public float padding = 0.5f;
-
-	public float laserProjectileSpeed;
-	public float missileProjectileSpeed;
-	public float bombProjectileSpeed;
-
-	public float laserFireRate;
-	public float missileFireRate;
-	public float bombFireRate;
-
+	public float projectileSpeed;
+	public float fireRate;
     public float health = 5000f;
 
-	public int weaponType1 = 1; // Depending on the number will determine what type of weapon the player will wield 
-	public int weaponType2 = 1; 
-	public int weaponType3 = 1;
-
-	public bool cannonLV2 = false;
-	public bool cannonLV3 = false;
-
 	public GameObject laser;
-	public GameObject missile;
-	public GameObject bomb;
+
 
 	float xMin;
 	float xMax;
@@ -47,77 +32,32 @@ public class PlayerController : MonoBehaviour {
 		yMax = upMost.y - padding;
 	}
 
-	void FireLV1(){
-		GameObject projectile;
-		float projectileSpeed;
-		switch (weaponType1) {
-		case 1:
-			projectile = laser;
-			projectileSpeed = laserProjectileSpeed;
-			break;
-		case 2:
-			projectile = missile;
-			projectileSpeed = missileProjectileSpeed;
-			break;
-		case 3:
-			projectile = bomb;
-			projectileSpeed = bombProjectileSpeed;
-			break;
-		}
-
+	void Fire(){
 		// Center Laser 
-		GameObject beam = Instantiate (projectile, transform.position, Quaternion.identity) as GameObject;
-		beam.GetComponent<Rigidbody2D>().velocity = new Vector2 (0, projectileSpeed);
-	
-	}
-
-	void FireLV2(){
-
-		GameObject projectile;
-		float projectileSpeed;
-		switch (weaponType2) {
-		case 1:
-			projectile = laser;
-			projectileSpeed = laserProjectileSpeed;
-			break;
-		case 2:
-			projectile = missile;
-			projectileSpeed = missileProjectileSpeed;
-			break;
-		case 3:
-			projectile = bomb;
-			projectileSpeed = bombProjectileSpeed;
-			break;
-		}
-
-		// Center Laser 
-		GameObject beam = Instantiate (projectile, transform.position, Quaternion.identity) as GameObject;
+		GameObject beam = Instantiate (laser, transform.position, Quaternion.identity) as GameObject;
 		beam.GetComponent<Rigidbody2D>().velocity = new Vector2 (0, projectileSpeed);
 
-	}
+		// Right Laser cannon
+		Vector2 rightLaserCannon = new Vector2 (transform.position.x + .5f , transform.position.y);
+		GameObject beam2 = Instantiate (laser, rightLaserCannon, Quaternion.identity) as GameObject;
+		beam2.GetComponent<Rigidbody2D>().velocity = new Vector2 (-1, projectileSpeed);
 
-	void FireLV3(){
-		
-		GameObject projectile;
-		float projectileSpeed;
-		switch (weaponType3) {
-		case 1:
-			projectile = laser;
-			projectileSpeed = laserProjectileSpeed;
-			break;
-		case 2:
-			projectile = missile;
-			projectileSpeed = missileProjectileSpeed;
-			break;
-		case 3:
-			projectile = bomb;
-			projectileSpeed = bombProjectileSpeed;
-			break;
-		}
+		// Left Laser cannon 
+		Vector2 leftLaserCannon = new Vector2 (transform.position.x - .5f , transform.position.y);
+		GameObject beam3 = Instantiate (laser, leftLaserCannon, Quaternion.identity) as GameObject;
+		beam3.GetComponent<Rigidbody2D>().velocity = new Vector2 (1, projectileSpeed);
 
-		// Center Laser 
-		GameObject beam = Instantiate (projectile, transform.position, Quaternion.identity) as GameObject;
-		beam.GetComponent<Rigidbody2D>().velocity = new Vector2 (0, projectileSpeed);
+		// Right Missile Launcher 
+		Vector2 rightMissile = new Vector2 (transform.position.x + 0.5f, transform.position.y + 0.2f);
+		GameObject beam5 = Instantiate (laser, rightMissile, Quaternion.identity) as GameObject;
+		beam5.GetComponent<Rigidbody2D>().velocity = new Vector2 (0, projectileSpeed);
+
+		// Left Missile Launcher 
+		Vector2 leftMissile = new Vector2 (transform.position.x - 0.5f, transform.position.y + 0.2f);
+		GameObject beam6 = Instantiate (laser, leftMissile, Quaternion.identity) as GameObject;
+		beam6.GetComponent<Rigidbody2D>().velocity = new Vector2 (0, projectileSpeed);
+
+
 
 	}
 
@@ -147,71 +87,15 @@ public class PlayerController : MonoBehaviour {
 		}
 	}
 
-	void fireWeapon(){
-
-		float fireRate = 0;
-
-
-		if (Input.GetKeyDown (KeyCode.Space)) {
-			
-			switch (weaponType1) {
-			case 1:
-				fireRate = laserFireRate;
-				break;
-			case 2:
-				fireRate = missileFireRate;
-				break;
-			case 3:
-				fireRate = bombFireRate;
-				break;
-			}
-
-			InvokeRepeating ("FireLV1", 0.0000001f, fireRate);
-
-			if (cannonLV2 == true) {
-				
-				switch (weaponType2) {
-				case 1:
-					fireRate = laserFireRate;
-					break;
-				case 2:
-					fireRate = missileFireRate;
-					break;
-				case 3:
-					fireRate = bombFireRate;
-					break;
-				}
-
-				InvokeRepeating ("FireLV2", 0.0000001f, fireRate);
-			}
-			if (cannonLV3 == true) {
-
-				switch (weaponType3) {
-				case 1:
-					fireRate = laserFireRate;
-					break;
-				case 2:
-					fireRate = missileFireRate;
-					break;
-				case 3:
-					fireRate = bombFireRate;
-					break;
-				}
-
-				InvokeRepeating ("FireLV3", 0.0000001f, fireRate);
-			}
-		}
-		if(Input.GetKeyUp(KeyCode.Space)){
-			CancelInvoke ("FireLV1");
-			CancelInvoke ("FireLV2");
-			CancelInvoke ("FireLV3");
-		}
-	}
-
 	// Update is called once per frame
 	void Update () {
+		if (Input.GetKeyDown (KeyCode.Space)) {
+			InvokeRepeating ("Fire", 0.0000001f, fireRate);
+		}
+		if(Input.GetKeyUp(KeyCode.Space)){
+			CancelInvoke ("Fire");
+		}
 
-		fireWeapon ();
 		moveShip ();
 
 		float newX = Mathf.Clamp (transform.position.x, xMin, xMax);
