@@ -45,6 +45,17 @@ public class PlayerController : MonoBehaviour {
 		Vector2 newPosition2 = new Vector2 (transform.position.x - .5f , transform.position.y);
 		GameObject beam3 = Instantiate (laser, newPosition2, Quaternion.identity) as GameObject;
 		beam3.GetComponent<Rigidbody2D>().velocity = new Vector2 (0, projectileSpeed);
+
+		// Right Missile Launcher 
+		Vector2 rightMissile = new Vector2 (transform.position.x + 0.5f, transform.position.y + 0.2f);
+		GameObject beam5 = Instantiate (laser, rightMissile, Quaternion.identity) as GameObject;
+		beam5.GetComponent<Rigidbody2D>().velocity = new Vector2 (-2, projectileSpeed);
+
+		// Left Missile Launcher 
+		Vector2 leftMissile = new Vector2 (transform.position.x - 0.5f, transform.position.y + 0.2f);
+		GameObject beam6 = Instantiate (laser, leftMissile, Quaternion.identity) as GameObject;
+		beam6.GetComponent<Rigidbody2D>().velocity = new Vector2 (2, projectileSpeed);
+
 	}
 
 	void moveShip(){
