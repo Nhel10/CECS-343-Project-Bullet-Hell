@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: d10b59bb7fb9e8c4489a7034064d288a
+timeCreated: 1525869299
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Anurati
+  fontNames:
+  - Anurati
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

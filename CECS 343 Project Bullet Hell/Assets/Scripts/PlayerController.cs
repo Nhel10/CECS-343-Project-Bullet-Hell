@@ -200,4 +200,8 @@ public class PlayerController : MonoBehaviour {
             Debug.Log("Hit by laser");
         }
     }
+
+		public void addLaserFireRate(){
+			laserFireRate = laserFireRate + 0.01f;
+		}
 }
