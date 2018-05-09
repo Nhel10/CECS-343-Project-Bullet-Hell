@@ -67,6 +67,8 @@ public class WaveSpawner : MonoBehaviour {
         if(nextWave + 1 > enemyWaves.Length - 1)    //if there are no more waves
         {
             Debug.Log("Level Completed");
+            this.enabled = false;
+
         }
         else
         {
